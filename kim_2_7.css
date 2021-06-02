@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+#up {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    background-color: rgb(53, 53, 53);
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: black solid 1px;
+    text-decoration: none;
+}
+
+.nav {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: fixed;
+    /* background-color: rgba(255, 255, 255, 0.4); */
+    background-color: #ffffffe3;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    z-index: 40;
+}
+
+.nav a {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-decoration: none;
+    color: black;
+    font-size: 3vmin;
+    font-weight: bold;
+}
+
+
+/*메인 슬라이드를 위한 것들*/
+
+ul,
+li {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide ul {
+    width: calc(100% * 4);
+    display: flex;
+    transition: 1s;
+}
+
+.slide li {
+    width: calc(100% / 4);
+    height: 100vh;
+}
+
+.slide li:nth-child(1) {
+    background: #ffa;
+}
+
+.slide li:nth-child(2) {
+    background: #faa;
+}
+
+.slide li:nth-child(3) {
+    background: #afa;
+}
+
+.slide li:nth-child(4) {
+    background: #aaf;
+}
+
+.slide input {
+    display: none;
+}
+
+.slide .bullet {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide .bullet label {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    border: 2px solid #666;
+    display: inline-block;
+    background: #fff;
+    font-size: 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+/* 슬라이드 조작 */
+
+#pos1:checked~ul {
+    margin-left: 0;
+}
+
+#pos2:checked~ul {
+    margin-left: -100%;
+}
+
+#pos3:checked~ul {
+    margin-left: -200%;
+}
+
+#pos4:checked~ul {
+    margin-left: -300%;
+}
+
+
+/* bullet 조작 */
+
+#pos1:checked~.bullet label:nth-child(1),
+#pos2:checked~.bullet label:nth-child(2),
+#pos3:checked~.bullet label:nth-child(3),
+#pos4:checked~.bullet label:nth-child(4) {
+    background: #666;
+}
+
+
+/*슬로건부분*/
+
+.mainnoti {
+    width: 100%;
+    height: 40vh;
+    background-color: rgb(255, 161, 126);
+    text-align: center;
+}
+
+
+/*집중을 끌기위한 제목 텍스트*/
+
+.maintext {
+    width: 80%;
+    margin: 0 auto;
+    font-weight: 900;
+    font-size: 4vmin;
+}
+
+
+/*내용 텍스트*/
+
+.subtext {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 25%;
+    font-size: 3vmin;
+}
+
+
+/*최신제품 (hovnoti 설명)*/
+
+.eqnoti {
+    text-align: center;
+    line-height: 25%;
+}
+
+
+/*가로배열 hovnoti들을 묶기 위한 con*/
+
+.connoti {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.hovnoti {
+    border: black 2px solid;
+    border-radius: 20px / 20px;
+    width: 45%;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.hovnoti h4 {
+    color: rgba(0, 0, 0, 0);
+}
+
+.hovnoti:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    /* -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px); */
+}
+
+.hovnoti:hover h1 {
+    /* transform: scale(); */
+    transition: 0.7s;
+}
+
+.hovnoti:hover h4 {
+    color: black;
+    transition: 0.7s;
+}
+
+
+/*긴 hovnoti를 묶기 위한 con*/
+
+.connoti-long {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.hovnoti-long {
+    border: black 2px solid;
+    border-radius: 20px / 20px;
+    width: 95%;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.hovnoti-long h4 {
+    color: rgba(0, 0, 0, 0);
+}
+
+.hovnoti-long:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    /* -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px); */
+}
+
+.hovnoti-long:hover h1 {
+    /* transform: scale(); */
+    transition: 0.7s;
+}
+
+.hovnoti-long:hover h4 {
+    color: black;
+    transition: 0.7s;
+}
+
+
+/*홍보 부분*/
+
+.pr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    background-color: #bdecb6;
+}
+
+.pr h4 {
+    color: rgba(0, 0, 0, 0);
+}
+
+.pr-img {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.pr-do:hover h4,
+.pr-ch:hover h4 {
+    color: black;
+    transition: 0.7s;
+}
+
+.pr-do,
+.pr-ch {
+    border: 2px black solid;
+    margin: 0 auto;
+    width: 35%;
+    height: 60vh;
+}
+
+
+/*푸터 영역*/
+
+.footer {
+    text-align: center;
+    background-color: #a0c6c7;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.foo-nav {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
+    height: 10vh;
+    border-bottom: 1px rgba(255, 255, 255, 0.308) solid;
+}
+
+.foo-nav-item {
+    width: 30%;
+    height: 10%;
+}
+
+.foo-link {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.foo-link:hover {
+    border-bottom: 1px white solid;
+}
+
+
+/*결이 다른 내용을 나누기 위한 것*/
+
+.foo-un-nav {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
+    height: 10vh;
+}
+
+.foo-un-nav-item {
+    width: 50%;
+    height: 10%;
+}
